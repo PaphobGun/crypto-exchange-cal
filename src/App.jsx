@@ -110,7 +110,7 @@ function App() {
                   setTotalReceived(total);
 
                   return (
-                    <Form.Item>
+                    <Form.Item label="Total Received">
                       <InputNumber
                         value={!isNaN(total) ? total : undefined}
                         width="100%"
