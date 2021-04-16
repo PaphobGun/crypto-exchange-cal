@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Row, Col, Card, Form, Button } from 'antd';
+import { Row, Col, Card, Form, Button, Statistic } from 'antd';
 import styled from 'styled-components';
 
 import InputNumber from 'InputNumber';
@@ -55,7 +55,7 @@ function App() {
           className="content"
         >
           <div className="title">May The Force Be With You.</div>
-          <Card>
+          <StyledCard>
             <Form layout="vertical" form={form}>
               <Form.Item name="amount" label="Amount spent">
                 <InputNumber
@@ -114,6 +114,7 @@ function App() {
                       <InputNumber
                         value={!isNaN(total) ? total : undefined}
                         width="100%"
+                        style={{ color: 'black' }}
                         disabled
                       />
                     </Form.Item>
@@ -127,11 +128,15 @@ function App() {
               <div>Percent: {formatAmount(marginPercentage.toFixed(2))} %</div>
             </div>
             <div className="button">
-              <Button size="large" onClick={handleOnReset}>
+              <Button
+                size="large"
+                onClick={handleOnReset}
+                style={{ backgroundColor: '#131822', color: '#fff' }}
+              >
                 Reset
               </Button>
             </div>
-          </Card>
+          </StyledCard>
         </Col>
       </Row>
     </Wrapper>
@@ -140,6 +145,7 @@ function App() {
 
 const Wrapper = styled.div`
   padding: 70px 0;
+  color: #fff;
 
   .title {
     text-align: center;
@@ -162,9 +168,18 @@ const Wrapper = styled.div`
     }
   }
 
+  .margin {
+    color: #fff;
+  }
+
   .button {
     margin-top: 20px;
   }
+`;
+
+const StyledCard = styled(Card)`
+  background-color: #171c27;
+  border-color: #181d28;
 `;
 
 export default App;
