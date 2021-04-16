@@ -1,1 +1,14 @@
 @import '~antd/dist/antd.css';
+
+body {
+  background-color: #131822;
+}
+
+.ant-form-item-label > label {
+  color: #fff;
+}
+
+.ant-input-number-input {
+  background-color: #131822;
+  color: #fff;
+}
