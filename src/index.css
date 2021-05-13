@@ -12,3 +12,7 @@ body {
   background-color: #131822;
   color: #fff;
 }
+
+.ant-tabs-top > .ant-tabs-nav::before {
+  border-bottom: none !important;
+}
