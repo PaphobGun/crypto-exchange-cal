@@ -98,6 +98,13 @@ function Main() {
     }));
   };
 
+  const onClickReset = () => {
+    setFormValues({
+      ...initialFormValues,
+      fee: exchange === EXCHANGE.BITKUB ? 0.25 : 0.1,
+    });
+  };
+
   return (
     <Wrapper>
       <Row>
@@ -198,6 +205,7 @@ function Main() {
               <Button
                 size="large"
                 style={{ backgroundColor: '#131822', color: '#fff' }}
+                onClick={onClickReset}
               >
                 Reset
               </Button>
